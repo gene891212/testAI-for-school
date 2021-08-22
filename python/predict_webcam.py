@@ -79,4 +79,12 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit()
+    except cv2.error:
+        print("""\n
+            沒有找到攝影機!!!
+        """)
+        sys.exit()
